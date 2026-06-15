@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights & Blogs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                Scalex
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Blogs</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+
+            <button class="btn">Get Started</button>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Insights & Blogs</h1>
+
+        <div class="categories">
+            <button class="active">All</button>
+            <button>Tech</button>
+            <button>SaaS</button>
+            <button>Marketing</button>
+        </div>
+    </section>
+
+    <!-- Blog Cards -->
+    <section class="blogs">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1?w=800"
+                alt="Blog">
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800"
+                alt="Blog">
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?w=800"
+                alt="Blog">
+        </div>
+
+    </section>
+
+</body>
+</html>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#000;
+    color:white;
+    min-height:100vh;
+    padding:20px;
+}
+
+/* Navbar */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 20px;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+}
+
+.nav-links{
+    display:flex;
+    gap:40px;
+    list-style:none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-size:15px;
+}
+
+.btn{
+    background:#151515;
+    color:white;
+    border:none;
+    padding:14px 24px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+/* Hero */
+
+.hero{
+    text-align:center;
+    margin-top:40px;
+}
+
+.hero h1{
+    font-size:110px;
+    font-weight:600;
+    line-height:1.1;
+}
+
+/* Categories */
+
+.categories{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-top:40px;
+}
+
+.categories button{
+    border:none;
+    background:#171717;
+    color:white;
+    padding:12px 22px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:14px;
+}
+
+.categories .active{
+    background:#ff5a14;
+}
+
+/* Blog Grid */
+
+.blogs{
+    margin-top:50px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    overflow:hidden;
+    border-radius:20px;
+    height:300px;
+}
+
+.card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.4s;
+}
+
+.card:hover img{
+    transform:scale(1.05);
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+    .hero h1{
+        font-size:70px;
+    }
+
+    .blogs{
+        grid-template-columns:1fr;
+    }
+
+    .nav-links{
+        display:none;
+    }
+}
+
+@media(max-width:500px){
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .categories{
+        flex-wrap:wrap;
+    }
+
+    .btn{
+        padding:10px 16px;
+    }
+}

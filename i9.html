@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day 8 Task</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Inter,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+    radial-gradient(circle at top left,#3a3a3a,#181818);
+    padding:30px;
+}
+
+/* Main Window */
+
+.container{
+    width:1100px;
+    background:#ececec;
+    border-radius:40px;
+    padding:25px;
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
+}
+
+/* Navbar */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.left-nav{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+.logo{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:3px solid #111;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+}
+
+.menu{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#222;
+    font-size:14px;
+}
+
+.auth{
+    display:flex;
+    gap:10px;
+}
+
+.auth button{
+    border:none;
+    padding:10px 18px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.login{
+    background:#ddd;
+}
+
+.signup{
+    background:#111;
+    color:white;
+}
+
+/* Layout */
+
+.grid{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:15px;
+}
+
+/* Left Big Card */
+
+.hero-card{
+    background:#181818;
+    color:white;
+    border-radius:25px;
+    padding:35px;
+    min-height:380px;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-card small{
+    color:#aaa;
+}
+
+.hero-card h1{
+    font-size:58px;
+    line-height:1;
+    margin-top:15px;
+}
+
+.product{
+    position:absolute;
+    right:30px;
+    bottom:40px;
+}
+
+.cube{
+    width:110px;
+    height:110px;
+    background:#333;
+    position:relative;
+}
+
+.cube::before{
+    content:'';
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:black;
+    position:absolute;
+    top:-25px;
+    left:25px;
+    box-shadow:0 0 20px rgba(255,255,255,.15);
+}
+
+.select{
+    position:absolute;
+    left:35px;
+    bottom:30px;
+    background:white;
+    color:black;
+    border-radius:12px;
+    padding:15px 20px;
+}
+
+/* Right Side */
+
+.right{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+/* Blog Card */
+
+.blog{
+    background:#f5f5f5;
+    border-radius:25px;
+    min-height:180px;
+    padding:25px;
+    position:relative;
+    overflow:hidden;
+}
+
+.blog h2{
+    position:absolute;
+    bottom:30px;
+    left:25px;
+    font-size:42px;
+}
+
+.bubbles{
+    position:absolute;
+    right:20px;
+    top:20px;
+}
+
+.ball1,
+.ball2,
+.ball3{
+    border-radius:50%;
+    background:black;
+    filter:blur(2px);
+}
+
+.ball1{
+    width:80px;
+    height:80px;
+    margin-left:40px;
+}
+
+.ball2{
+    width:120px;
+    height:120px;
+    opacity:.8;
+}
+
+.ball3{
+    width:160px;
+    height:160px;
+    opacity:.5;
+}
+
+/* Bottom Cards */
+
+.bottom{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.about{
+    background:#bf8cff;
+    color:white;
+}
+
+.contact{
+    background:#b8ff00;
+    color:#111;
+}
+
+.small-card{
+    min-height:170px;
+    border-radius:25px;
+    padding:25px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.small-card h3{
+    font-size:42px;
+}
+
+.arrow{
+    align-self:flex-end;
+    font-size:25px;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.grid{
+    grid-template-columns:1fr;
+}
+
+.hero-card h1{
+    font-size:42px;
+}
+
+.blog h2{
+    font-size:30px;
+}
+
+.small-card h3{
+    font-size:28px;
+}
+
+.menu{
+    display:none;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="navbar">
+
+        <div class="left-nav">
+
+            <div class="logo">◎</div>
+
+            <ul class="menu">
+                <li><a href="#">Products</a></li>
+                <li><a href="#">App</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+
+        </div>
+
+        <div class="auth">
+            <button class="login">LOG IN</button>
+            <button class="signup">SIGN UP</button>
+        </div>
+
+    </div>
+
+    <div class="grid">
+
+        <!-- Left Card -->
+
+        <div class="hero-card">
+
+            <small>MORE OFFERS</small>
+
+            <h1>There is<br>something else<br>for you</h1>
+
+            <div class="select">
+                All products ✈
+            </div>
+
+            <div class="product">
+                <div class="cube"></div>
+            </div>
+
+        </div>
+
+        <!-- Right Side -->
+
+        <div class="right">
+
+            <div class="blog">
+
+                <small>WORLD OF HEARING TECHNOLOGY</small>
+
+                <div class="bubbles">
+                    <div class="ball1"></div>
+                    <div class="ball2"></div>
+                    <div class="ball3"></div>
+                </div>
+
+                <h2>View our blog</h2>
+
+            </div>
+
+            <div class="bottom">
+
+                <div class="small-card about">
+                    <small>DISCOVER OUR HISTORY</small>
+                    <div class="arrow">↗</div>
+                    <h3>About us</h3>
+                </div>
+
+                <div class="small-card contact">
+                    <small>HAVE SOME QUESTIONS?</small>
+                    <div class="arrow">✈</div>
+                    <h3>Contact us</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+.container{
+  background:
+    radial-gradient(circle,#d9d9d9 1px,transparent 1px);
+  background-size:20px 20px;
+  background-color:#f5f5f5;
+}
+</body>
+</html>
+
